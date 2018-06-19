@@ -180,8 +180,8 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="(?i)wicd-client"] floating enable border normal
-for_window [class="(?i)blueman-manager"] floating enable border normal
+for_window [class="(?i)wicd-client"] floating enable normal
+for_window [class="(?i)blueman-manager"] floating enable normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -255,9 +255,9 @@ exec_always --no-startup-id ckb-next -b
 
 # Set up mouse parameters
 exec_always --no-startup-id xinput set-prop 15 310 1 1
-exec_always --no-startup-id xinput set-prop 15 334 0 0 0 0 0 0 0
-exec_always --no-startup-id xinput set-prop 15 340 1
-exec_always --no-startup-id xinput set-prop 15 341 4 50
+exec_always --no-startup-id xinput set-prop 15 315 0 0 0 0 0 0 0
+exec_always --no-startup-id xinput set-prop 15 321 1
+exec_always --no-startup-id xinput set-prop 15 322 4 50
 
 
 
