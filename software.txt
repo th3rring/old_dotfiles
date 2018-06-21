@@ -1,0 +1,36 @@
+i3-gaps
+termite
+rofi
+pactl
+playerctl
+blueman-manager
+nitrogen
+compton
+wicd
+xfce4-power-manager
+pnmixer
+pamac-tray
+insync
+clipit
+xrandr
+polybar
+libinput
+ckb-next
+ff-theme-util
+aurman
+google chrome
+spotify
+thunar
+libreoffice
+slack
+bumblebee
+lightdm
+vim
+roboto mono
+wuncon
+fontawesome
+source code pro
+siji
+pulseaudio
+https://github.com/unix121/i3wm-themer
+nord
