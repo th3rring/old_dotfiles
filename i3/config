@@ -246,12 +246,12 @@ exec --no-startup-id pnmixer
 exec --no-startup-id pamac-tray
 exec --no-startup-id insync start
 exec --no-startup-id clipit
+#exec --no-startup-id xrandr --output DP1 --auto --right-of eDP1
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 #exec_always --nostartup-id ./$HOME/Workspace/Scripts/video_switching/output_switching.sh &
 exec_always --no-startup-id ckb-next -b
-
 
 # Set up mouse parameters
 exec_always --no-startup-id xinput set-prop 15 310 1 1
