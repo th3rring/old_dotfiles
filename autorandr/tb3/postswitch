@@ -1,0 +1,5 @@
+#!/bin/bash -x
+killall polybar
+
+polybar main &
+nitrogen --restore

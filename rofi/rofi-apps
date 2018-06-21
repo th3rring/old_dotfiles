@@ -1,0 +1,12 @@
+
+#!/bin/bash
+
+rofi -sidebar-mode \
+-modi ssh,drun,window,run \
+-lines 12 \
+-padding 18 \
+-width 60 \
+-location 0 \
+-show drun \
+-columns 3 \
+-font "Source Code Pro 10"
