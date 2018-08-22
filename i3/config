@@ -13,15 +13,16 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec termite
-#bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec termite
+bindsym $mod+Return exec i3-sensible-terminal
 
 # Window kill command
 bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -modi drun ssh window
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/rofi-apps 
+#bindsym $mod+d exec --no-startup-id ~/.config/rofi/rofi-apps 
+bindsym $mod+d exec --no-startup-id krunner 
 
 # change focus
 #bindsym $mod+j focus left
@@ -32,8 +33,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-
 
 
 bindsym $mod+Left focus left
@@ -101,14 +100,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # Switch function keys
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute  exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym XF86AudioMute  exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Media player controls
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioPlay exec playerctl play-pause
+#bindsym XF86AudioNext exec playerctl next
 
 
 
@@ -182,6 +181,7 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="(?i)wicd-client"] floating enable normal
 for_window [class="(?i)blueman-manager"] floating enable normal
+for_window [class="(?i)plasmashell"] floating enable normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -237,27 +237,32 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id wicd-client --tray
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id blueman-applet
-exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id pnmixer
-exec --no-startup-id pamac-tray
-exec --no-startup-id insync start
-exec --no-startup-id clipit
+exec --no-startup-id nitrogen --restore
+#exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/mountains_tops_snow_sky_118564_3840x2400.jpg
+#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+#exec --no-startup-id killall compton; sleep 2;
+#exec --no-startup-id compton -b   
+#exec --no-startup-id wicd-client --tray
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id blueman-applet
+#exec --no-startup-id polychromatic-tray-applet
+#exec --no-startup-id pnmixer
+#exec --no-startup-id pamac-tray
+#exec --no-startup-id insync start
+#exec --no-startup-id clipit
 #exec --no-startup-id xrandr --output DP1 --auto --right-of eDP1
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id fix_xcursor
+#exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 #exec_always --nostartup-id ./$HOME/Workspace/Scripts/video_switching/output_switching.sh &
-exec_always --no-startup-id ckb-next -b
+#exec_always --no-startup-id ckb-next -b
+exec_always --no-startup-id undervolt --core -130 --cache -130 --gpu -100
 
 # Set up mouse parameters
-exec_always --no-startup-id xinput set-prop 15 310 1 1
-exec_always --no-startup-id xinput set-prop 15 315 0 0 0 0 0 0 0
-exec_always --no-startup-id xinput set-prop 15 321 1
-exec_always --no-startup-id xinput set-prop 15 322 4 50
+#exec_always --no-startup-id xinput set-prop 15 310 1 1
+#exec_always --no-startup-id xinput set-prop 15 315 0 0 0 0 0 0 0
+#exec_always --no-startup-id xinput set-prop 15 321 1
+#exec_always --no-startup-id xinput set-prop 15 322 4 50
 
 
 
@@ -274,7 +279,7 @@ client.background #2f2f38
 gaps inner 10
 gaps outer -4
 
-#smart_gaps on
+smart_gaps on
 smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
@@ -313,3 +318,30 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+# plasma integration
+
+    # window manager
+    exec --no-startup-id wmctrl -c Plasma
+    
+    # desktop
+    for_window [title="Desktop — Plasma"] kill; floating none; border none
+
+## Avoid tiling popups, dropdown windows from plasma
+
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+
+for_window [class="plasmashell"] floating enable;
+
+for_window [class="Plasma"] floating enable; border none
+
+for_window [title="plasma-desktop"] floating enable; border none
+
+for_window [title="win7"] floating enable; border none
+
+for_window [class="krunner"] floating enable; border none
+
+for_window [class="Kmix"] floating enable; border none
+
+for_window [class="Klipper"] floating enable; border none
+
+for_window [class="Plasmoidviewer"] floating enable; border none

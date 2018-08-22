@@ -30,6 +30,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'kaicataldo/material.vim'
 
 " Git Interfaces
 Plugin 'tpope/vim-fugitive'
@@ -49,22 +50,25 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 " Vim-Airline Configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='nord'
+let g:airline_theme='material'
 
 " Theme settings
 syntax on
-colorscheme nord
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-" set termguicolors
-let g:nord_comment_brightness = 15
+colorscheme material
+hi Normal guibg=NONE ctermbg=NONE
+
+
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_uniform_diff_background = 1
+"" set termguicolors
+"let g:nord_comment_brightness = 15
 
 " Set true color support if not enabled
-if has('termguicolors')
+"if has('termguicolors')
 	set termguicolors
-endif
+"endif
 
 
 

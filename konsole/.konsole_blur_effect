@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# How to use it: include this file from shell rc file.
+# e.g. source .konsole_blur_effect
+
+# Blur Active Konsolw window
+service="org.kde.konsole"
+windows=($(qdbus ${service} 2>null| grep -E '^/konsole/MainWindow_[0-9]+$'))
+for window in ${windows}; do
+  is_active="$(qdbus ${service} ${window} org.qtproject.Qt.QWidget.isActiveWindow)"
+  if [ "${is_active}" = "true" ]; then
+    xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c \
+      -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 \
+      -id "$(qdbus ${service} ${window} winId)"
+  fi
+done
