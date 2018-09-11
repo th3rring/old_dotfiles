@@ -5,9 +5,13 @@ new_float normal
 
 hide_edge_borders none
 
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+#bindsym $mod+u border none
+#bindsym $mod+y border pixel 1
+#bindsym $mod+n border norma
+
+bindsym $mod+Shift+u border none
+bindsym $mod+Shift+y border pixel 1
+bindsym $mod+Shift+n border normal
 
 font xft:URWGothic-Book 11
 
@@ -17,12 +21,18 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Window kill command
-bindsym $mod+Shift+q kill
+#bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -modi drun ssh window
 #bindsym $mod+d exec --no-startup-id ~/.config/rofi/rofi-apps 
 bindsym $mod+d exec --no-startup-id krunner 
+
+# Bind specific key commands to launch applications
+bindsym $mod+u exec --no-startup-id google-chrome
+bindsym $mod+i exec --no-startup-id slack
+bindsym $mod+o exec --no-startup-id konsole -e ranger
 
 # change focus
 #bindsym $mod+j focus left
@@ -64,7 +74,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # split orientation
 bindsym $mod+c split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+#bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -187,13 +197,13 @@ for_window [class="(?i)plasmashell"] floating enable normal
 for_window [urgent=latest] focus
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -257,6 +267,7 @@ exec --no-startup-id nitrogen --restore
 #exec_always --nostartup-id ./$HOME/Workspace/Scripts/video_switching/output_switching.sh &
 #exec_always --no-startup-id ckb-next -b
 exec_always --no-startup-id undervolt --core -130 --cache -130 --gpu -100
+exec_always --no-startup-id powertop --auto-tune
 
 # Set up mouse parameters
 #exec_always --no-startup-id xinput set-prop 15 310 1 1
@@ -266,14 +277,23 @@ exec_always --no-startup-id undervolt --core -130 --cache -130 --gpu -100
 
 
 
-# Theme colors
-client.focused #b0c4bb #2f2f38 #b0c4bb #81a2be #81a2be
-client.focused_inactive #b0c4bb #2f2f38 #b0c4bb #688486 #688486
-client.unfocused #b0c4bb #2f2f38 #b0c4bb #688486 #688486
-client.urgent #b0c4bb #2f2f38 #b0c4bb #688486 #688486
-client.placeholder #b0c4bb #2f2f38 #b0c4bb #688486 #688486
+## Theme colors
+#client.focused #b0c4bb #2f2f38 #b0c4bb #81a2be #81a2be
+#client.focused_inactive #b0c4bb #2f2f38 #b0c4bb #688486 #688486
+#client.unfocused #b0c4bb #2f2f38 #b0c4bb #688486 #688486
+#client.urgent #b0c4bb #2f2f38 #b0c4bb #688486 #688486
+#client.placeholder #b0c4bb #2f2f38 #b0c4bb #688486 #688486
 
-client.background #2f2f38
+#client.background #2f2f38
+
+
+client.focused #c5c8c6 #1d1f21 #c5c8c6 #c4a260 #c4a260
+client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d 
+client.unfocused #c5c8c6 #1d1f21 #c5c8c6 #2d4b63 #2d4b63
+client.urgent #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.placeholder #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+
+client.background #1d1f21
 
 # Gaps
 gaps inner 10

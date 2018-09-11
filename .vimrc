@@ -31,6 +31,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'kaicataldo/material.vim'
+Plugin 'dylanaraps/wal.vim'
 
 " Git Interfaces
 Plugin 'tpope/vim-fugitive'
@@ -54,7 +55,7 @@ let g:airline_theme='material'
 
 " Theme settings
 syntax on
-colorscheme material
+colorscheme wal
 hi Normal guibg=NONE ctermbg=NONE
 
 
@@ -62,12 +63,12 @@ hi Normal guibg=NONE ctermbg=NONE
 "let g:nord_italic_comments = 1
 "let g:nord_uniform_status_lines = 1
 "let g:nord_uniform_diff_background = 1
-"" set termguicolors
+"set termguicolors
 "let g:nord_comment_brightness = 15
 
 " Set true color support if not enabled
 "if has('termguicolors')
-	set termguicolors
+"set termguicolors
 "endif
 
 
