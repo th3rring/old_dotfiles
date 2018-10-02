@@ -26,12 +26,13 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'Chiel92/vim-autoformat'
 
 " Theme/Interface
-" Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'kaicataldo/material.vim'
 Plugin 'dylanaraps/wal.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Git Interfaces
 Plugin 'tpope/vim-fugitive'
@@ -40,9 +41,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Set numberline
-set number
+set number relativenumber
 
-set nowrap
+"set nowrap
 
 " Devicons configuration 
 let g:webdevicons_conceal_nerdtree_brackets = 0
@@ -55,7 +56,8 @@ let g:airline_theme='material'
 
 " Theme settings
 syntax on
-colorscheme wal
+"colorscheme wal
+colorscheme pablo
 hi Normal guibg=NONE ctermbg=NONE
 
 
