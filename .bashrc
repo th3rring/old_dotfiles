@@ -137,3 +137,5 @@ export PATH="/home/therring/anaconda3/bin:$PATH"
 #source ~/.kavrakilab/setup.bash
 source /opt/ros/melodic/setup.bash
 source ~/.kavrakilab/setup.bash
+
+alias bg-restore='nitrogen --restore --force-setter=xinerama'

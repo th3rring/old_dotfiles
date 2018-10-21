@@ -1,6 +1,6 @@
 set $mod Mod4
 
-new_window pixel 1
+new_window 1pixel
 new_float normal
 
 hide_edge_borders none
@@ -247,7 +247,7 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore --force-setter=xinerama
 #exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/mountains_tops_snow_sky_118564_3840x2400.jpg
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id killall compton; sleep 2;
@@ -341,10 +341,10 @@ mode "$mode_gaps_outer" {
 # plasma integration
 
     # window manager
-    exec --no-startup-id wmctrl -c Plasma
+#    exec --no-startup-id wmctrl -c Plasma
     
     # desktop
-    for_window [title="Desktop — Plasma"] kill; floating none; border none
+#   for_window [title="Desktop — Plasma"] kill; floating none; border none
 
 ## Avoid tiling popups, dropdown windows from plasma
 
