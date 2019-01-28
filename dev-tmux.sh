@@ -4,7 +4,7 @@ tmux split-window -v
 tmux split-window -h
 tmux split-window -h -t 1
 tmux select-pane -t 1
-tmux new-window 'vim'
+tmux new-window -n 'vim'
 tmux new-window -n 'util' 'htop'
 tmux split-window -h 'python3'
 tmux split-window -v 'bc -l'
