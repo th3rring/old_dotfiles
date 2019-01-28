@@ -26,7 +26,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'Chiel92/vim-autoformat'
 
 " Theme/Interface
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kaicataldo/material.vim'
